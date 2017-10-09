@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RobotEndpoint {
 
-    @RequestMapping(value = "/rest/mars/{commands}", method = RequestMethod.GET)
+    @RequestMapping(value = "/rest/mars/{commands}", method = RequestMethod.POST)
     public ResponseEntity<String> executeCommands(@PathVariable("commands") String commands) {
         try {
             return ResponseEntity.ok(new StateMachine().executeCommands(commands).toString());
